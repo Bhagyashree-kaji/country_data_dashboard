@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Data Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1>Country Data Dashboard</h1>
+    <button onclick="fetchCountries()">Load Countries</button>
+    <ul id="country-list"></ul>
+
+    <script>
+        function fetchCountries() {
+            fetch('/countries')
+                .then(response => response.json())
+                .then(data => {
+                    const list = document.getElementById('country-list');
+                    list.innerHTML = '';
+                    data.forEach(country => {
+                        const li = document.createElement('li');
+                        li.textContent = `${country.name} - Population: ${country.population}, Region: ${country.region}`;
+                        list.appendChild(li);
+                    });
+                });
+        }
+    </script>
+</body>
+
+</html>
