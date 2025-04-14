@@ -1,98 +1,26 @@
-🌍 Country Data Aggregator and Insights Dashboard
-This project fetches country data using the REST Countries API, stores it in a database, and provides an insights dashboard.
+# 🌍 Country Data Dashboard
 
-🛠 Features
-✅ Fetches real-time country data using REST API
-✅ Stores data in an SQLite database using Flask-SQLAlchemy
-✅ Provides an API endpoint to retrieve stored country data
-✅ Basic frontend dashboard to display country insights
+This app fetches data from the [REST Countries API](https://restcountries.com/), stores it in a database, and provides an interactive dashboard via Flask.
 
-📥 Installation Guide
-Follow these steps to set up and run the project.
+## ✨ Features
+- Fetch & store real-time country data
+- View countries with name, capital, population, region, and flag
+- Live search and filter by region
+- API endpoint `/countries` for programmatic access
 
-1️⃣ Clone the Repository
-Open a terminal (Command Prompt/PowerShell for Windows, Terminal for macOS/Linux) and run:
+## 🔧 Setup
 
-bash
-Copy
-Edit
-git clone https://github.com/Bhagyashree-kaji/country_data_dashboard.git
-Navigate into the project folder:
+```bash
+git clone https://github.com/yourusername/country-data-dashboard.git
+cd country-data-dashboard
 
-bash
-Copy
-Edit
-cd country_data_dashboard
-2️⃣ Set Up a Virtual Environment
-For Windows:
-bash
-Copy
-Edit
+# Create virtual environment
 python -m venv venv
-venv\Scripts\activate
-For macOS/Linux:
-bash
-Copy
-Edit
-python3 -m venv venv
-source venv/bin/activate
-3️⃣ Install Dependencies
-Run:
+source venv/bin/activate  # or venv\Scripts\activate on Windows
 
-bash
-Copy
-Edit
+# Install dependencies
 pip install -r requirements.txt
-4️⃣ Run the Flask Application
-bash
-Copy
-Edit
+
+# Run app
 python app.py
-After running the command, you should see output like this:
 
-nginx
-Copy
-Edit
-Running on http://127.0.0.1:5000/
-Open a browser and go to http://127.0.0.1:5000/countries to verify API responses.
-
-📂 Project Structure
-csharp
-Copy
-Edit
-country_data_dashboard/
-│── static/ # CSS, JavaScript, Images
-│── templates/ # HTML Templates
-│── venv/ # Virtual Environment
-│── app.py # Main Flask App
-│── models.py # Database Models
-│── requirements.txt # Dependencies
-│── config.py # Configuration File
-│── README.md # Project Documentation
-🛠 API Usage
-Fetch All Countries
-Endpoint: /countries
-
-Method: GET
-
-Response:
-
-json
-Copy
-Edit
-[
-{
-"name": "India",
-"population": 1400000000,
-"region": "Asia"
-},
-{
-"name": "United States",
-"population": 331000000,
-"region": "Americas"
-}
-]
-🚀 Next Steps
-🔹 Improve UI with a dashboard
-🔹 Add search and filter features
-🔹 Deploy the project
